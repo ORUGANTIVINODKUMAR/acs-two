@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Federal Tax Summary (Estimate)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header no-print">
+  <h2>Federal Tax Summary (Estimate)</h2>
+  <button onclick="goBackToScenario()">Back to Scenario</button>
+</header>
+
+<div class="summary-container">
+
+  <!-- INCOME -->
+  <section class="summary-card">
+    <h3>Income</h3>
+    <div class="row"><span>W-2 Wages</span><span id="sumWages"></span></div>
+    <div class="row"><span>Interest Income</span><span id="sumInterest"></span></div>
+    <div class="row"><span>Capital Gains</span><span id="sumCapitalGains"></span></div>
+    <div class="row"><span>Business Gross Income</span><span id="sumBizGross"></span></div>
+    <div class="row"><span>Business Expenses</span><span id="sumBizExpenses"></span></div>
+    <div class="row total"><span>Net Business Income</span><span id="sumBizNet"></span></div>
+    <div class="row grand-total"><span>Total Income</span><span id="totalIncome"></span></div>
+  </section>
+
+  <!-- ADJUSTMENTS -->
+  <section class="summary-card">
+    <h3>Adjustments (AGI)</h3>
+    <div class="row"><span>½ Self-Employment Tax Deduction</span><span id="sumSeDeduction"></span></div>
+    <div class="row grand-total"><span>Adjusted Gross Income (AGI)</span><span id="sumAGI"></span></div>
+  </section>
+
+  <!-- DEDUCTIONS -->
+  <section class="summary-card">
+    <h3>Deductions</h3>
+    <div class="row"><span>Deduction Type</span><span id="sumDeductionType"></span></div>
+    <div class="row"><span>Standard Deduction</span><span id="sumStandardDeduction"></span></div>
+    <div class="row"><span>Itemized Deduction</span><span id="sumItemizedDeduction"></span></div>
+    <div class="row grand-total"><span>Taxable Income</span><span id="taxableIncome"></span></div>
+  </section>
+
+  <!-- TAX -->
+  <section class="summary-card">
+    <h3>Federal Tax & Credits</h3>
+    <div class="row"><span>Income Tax</span><span id="sumIncomeTax"></span></div>
+    <div class="row"><span>Self-Employment Tax</span><span id="sumSeTax"></span></div>
+    <div class="row"><span>Child Tax Credit</span><span id="sumChildCredit"></span></div>
+    <div class="row grand-total"><span>Total Federal Tax</span><span id="estimatedTax"></span></div>
+  </section>
+
+  <!-- PAYMENTS -->
+  <section class="summary-card">
+    <h3>Payments</h3>
+    <div class="row"><span>Federal Tax Withheld</span><span id="sumWithheld"></span></div>
+    <div class="row grand-total"><span>Total Payments</span><span id="sumPayments"></span></div>
+  </section>
+
+  <!-- RESULT -->
+  <section class="summary-card result">
+    <h3>Result</h3>
+    <div class="row grand-total" id="finalResult"></div>
+  </section>
+
+  <div class="print-area no-print">
+    <button onclick="window.print()">🖨️ Print / Save as PDF</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

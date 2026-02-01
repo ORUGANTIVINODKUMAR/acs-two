@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tax Planner - Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h2>Tax Planner – Dashboard</h2>
+  <button onclick="logout()">Logout</button>
+</header>
+
+<div class="layout">
+  <button onclick="compareScenarios()" style="margin-top:10px;">
+    Compare Scenarios
+  </button>
+
+  <!-- LEFT PANEL -->
+  <div class="sidebar">
+    <h3>Add Client</h3>
+    <input id="clientName" placeholder="Client Name">
+    <button onclick="addClient()">Add Client</button>
+    <hr>
+
+    <input
+      id="searchClient"
+      placeholder="Search client..."
+      oninput="renderClients()"
+    />
+
+    <button onclick="sortClients()">Sort A–Z</button>
+
+    <h3 style="margin-top:20px;">Clients</h3>
+    <div id="clientList"></div>
+  </div>
+
+  <!-- MAIN PANEL -->
+  <div class="main">
+    <h3 id="selectedClientTitle">Select a client</h3>
+
+    <button id="addScenarioBtn" style="display:none;" onclick="addScenario()">
+      + Add Scenario
+    </button>
+
+    <ul id="scenarioList"></ul>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

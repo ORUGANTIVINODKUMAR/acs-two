@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tax Planner - Scenario</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h2>Tax Scenario</h2>
+  <button onclick="goBack()">← Back to Dashboard</button>
+</header>
+
+<div class="scenario-layout">
+
+  <!-- LEFT SIDEBAR -->
+  <div class="sidebar">
+
+    <h3>Scenario</h3>
+
+    <button class="nav-item" onclick="showSection('basic')">
+      Basic Information
+    </button>
+
+    <div class="nav-group">
+      <div class="nav-group-title" onclick="toggleGroup('incomeGroup')">
+        Income ▾
+      </div>
+      <div id="incomeGroup" class="nav-group-items">
+        <button onclick="showSection('w2')">W-2 Wages</button>
+
+        <button onclick="showSection('interest')">
+          1099-INT (Interest)
+        </button>
+
+        <button onclick="showSection('dividends')">
+          1099-DIV (Dividends) <!-- 🆕 -->
+        </button>
+
+        <button onclick="showSection('scheduleC')">
+          Schedule C (Business)
+        </button>
+
+        <button onclick="showSection('scheduleE')">
+          Schedule E (Rental) <!-- 🆕 -->
+        </button>
+
+        <button onclick="showSection('capitalGains')">
+          Capital Gains
+        </button>
+      </div>
+
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title" onclick="toggleGroup('deductionGroup')">
+        Deductions & Credits ▾
+      </div>
+      <div id="deductionGroup" class="nav-group-items">
+        <button onclick="showSection('deductions')">Deductions</button>
+        <button onclick="showSection('credits')">Credits</button>
+      </div>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title" onclick="toggleGroup('otherGroup')">
+        Other ▾
+      </div>
+      <div id="otherGroup" class="nav-group-items">
+        <button onclick="showSection('state')">State</button>
+      </div>
+    </div>
+
+    <div class="sidebar-actions">
+      <button class="primary" onclick="saveScenario()">💾 Save</button>
+      <button class="secondary" onclick="calculateTax()">📊 Calculate</button>
+    </div>
+
+  </div>
+
+  <!-- RIGHT CONTENT -->
+  <div class="content" id="contentArea">
+    <p>Select a section from the left to begin.</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

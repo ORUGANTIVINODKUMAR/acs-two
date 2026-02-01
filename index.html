@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tax Planner - Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- LOGIN -->
+    <div id="loginBox">
+      <h2>Login</h2>
+
+      <input id="loginEmail" type="email" placeholder="Email">
+      <input id="loginPassword" type="password" placeholder="Password">
+
+      <button onclick="login()">Login</button>
+
+      <p>
+        New user?
+        <span onclick="showSignup()">Sign up</span>
+      </p>
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="signupBox" style="display:none;">
+      <h2>Sign Up</h2>
+
+      <input id="signupName" type="text" placeholder="Full Name">
+      <input id="signupEmail" type="email" placeholder="Email">
+      <input id="signupPassword" type="password" placeholder="Password">
+
+      <button onclick="signup()">Sign Up</button>
+
+      <p>
+        Already have an account?
+        <span onclick="showLogin()">Login</span>
+      </p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
